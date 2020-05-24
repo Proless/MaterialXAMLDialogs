@@ -1,0 +1,114 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+			 x:Class="MaterialXAMLDialogs.Dialogs.ProgressView"
+			 x:ClassModifier="internal"
+			 TextElement.FontWeight="Medium"
+			 TextElement.FontSize="14"
+			 FontFamily="{materialDesign:MaterialDesignFont}"
+			 MinHeight="160"
+			 MaxHeight="400"
+			 MinWidth="340"
+			 MaxWidth="340">
+
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<!--Title row-->
+			<RowDefinition Height="36" />
+			<!--Separator row-->
+			<RowDefinition Height="Auto" />
+			<!--Icon, Supporting text row-->
+			<RowDefinition Height="*" />
+			<!--Progressbar, Progress text and cancel button row-->
+			<RowDefinition Height="36" />
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="4" />
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition />
+			<ColumnDefinition Width="4" />
+		</Grid.ColumnDefinitions>
+		<!--Row 0-->
+		<TextBlock Grid.Row="0"
+				   Grid.Column="2"
+				   VerticalAlignment="Center"
+				   HorizontalAlignment="Left"
+				   Margin="3 3 3 0"
+				   FontSize="18"
+				   TextTrimming="CharacterEllipsis"
+				   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"
+				   Text="{Binding Title}" />
+		<!--Row 1-->
+		<Separator Grid.Row="1"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="2"
+				   Height="5"
+				   VerticalAlignment="Center"
+				   Visibility="{Binding ShowTitleSeparator, Converter={StaticResource BooleanToVisibilityConverter}}"
+				   Style="{DynamicResource MaterialDesignSeparator}" />
+		<!--Row 2-->
+		<materialDesign:PackIcon Grid.Row="0"
+								 Grid.Column="1"
+								 Margin="3"
+								 Foreground="{Binding IconBrush}"
+								 Kind="{Binding IconKind}"
+								 Visibility="{Binding ShowIcon,Converter={StaticResource BooleanToVisibilityConverter}}"
+								 HorizontalAlignment="Stretch"
+								 VerticalAlignment="Center"
+								 Width="32"
+								 Height="32" />
+		<TextBlock Grid.Row="2"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="2"
+				   Margin="5 3"
+				   TextWrapping="Wrap"
+				   VerticalAlignment="Center"
+				   TextTrimming="CharacterEllipsis"
+				   Text="{Binding SupportingText}"
+				   Style="{DynamicResource MaterialDesignBody1TextBlock}" />
+
+		<!--Row 3-->
+		<Grid Grid.Row="3"
+			  Grid.Column="1"
+			  Grid.ColumnSpan="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+
+
+
+			<ProgressBar Grid.Column="0"
+						 Value="{Binding Progress}"
+						 IsIndeterminate="{Binding IsIndeterminate}"
+						 Margin="3"
+						 Height="5" />
+
+			<TextBlock Grid.Column="1"
+					   Margin="3"
+					   Style="{DynamicResource MaterialDesignOverlineTextBlock}"
+					   Text="{Binding ProgressText}"
+					   VerticalAlignment="Center" />
+
+			<Button Grid.Column="2"
+					Style="{DynamicResource MaterialDesignFlatButton}"
+					Margin="3 3 3 5"
+					Content="Cancel"
+					Command="{Binding CancelCommand}"
+					Visibility="{Binding Cancellable, Converter={StaticResource BooleanToVisibilityConverter}}"
+					Padding="16 0"
+					VerticalAlignment="Center" />
+		</Grid>
+	</Grid>
+</UserControl>
