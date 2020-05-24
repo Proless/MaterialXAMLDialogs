@@ -56,10 +56,9 @@
 		<ComboBox Grid.Row="3"
 				  Margin="3 3 3 16"
 				  materialDesign:HintAssist.HelperText="Buttons"
-				  Style="{DynamicResource MaterialDesignFilledComboBox}"
 				  ItemsSource="{Binding Buttons}"
 				  SelectedItem="{Binding SelectedButtons}"
-				  Padding="12,0,8,0" />
+				  VerticalAlignment="Center" />
 		<!--Row 4-->
 		<DockPanel Grid.Row="4"
 				   LastChildFill="True">
@@ -81,10 +80,19 @@
 					  IsEditable="True"
 					  materialDesign:HintAssist.HelperText="Icon and Color"
 					  IsEnabled="{Binding IsChecked, ElementName=iconCheckBox}"
-					  Style="{DynamicResource MaterialDesignFilledComboBox}"
 					  ItemsSource="{Binding Icons}"
 					  SelectedItem="{Binding SelectedIcon}"
 					  Padding="12,0,8,0">
+
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<StackPanel Orientation="Horizontal">
+							<materialDesign:PackIcon Kind="{Binding}" />
+							<TextBlock Text="{Binding}"
+									   Margin="5 0 0 0" />
+						</StackPanel>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
 				<ComboBox.ItemsPanel>
 					<ItemsPanelTemplate>
 						<VirtualizingStackPanel />

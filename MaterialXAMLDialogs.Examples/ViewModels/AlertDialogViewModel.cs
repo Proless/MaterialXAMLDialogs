@@ -47,6 +47,7 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 			Icons = Enum.GetValues(typeof(PackIconKind)).Cast<PackIconKind>();
 			Buttons = Enum.GetValues(typeof(DialogButtons)).Cast<DialogButtons>();
 			ShowDialogCommand = new RelayCommand(x => true, ShowDialog);
+			SelectedIcon = PackIconKind.Information;
 		}
 
 		// Methods

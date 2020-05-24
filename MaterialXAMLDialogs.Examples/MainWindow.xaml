@@ -12,21 +12,21 @@
 		FontFamily="{materialDesign:MaterialDesignFont}"
 		mc:Ignorable="d"
 		Title="MaterialXAMLDialogs.Examples"
-		Height="550"
-		Width="750">
+		WindowStartupLocation="CenterScreen"
+		MinHeight="600"
+		Width="450">
 	<materialDesign:DialogHost Identifier="Root"
 							   CloseOnClickAway="True">
-		<Grid>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition />
-				<ColumnDefinition />
-				<ColumnDefinition />
-			</Grid.ColumnDefinitions>
-
-			<views:AlertDialog Grid.Column="0" />
-			<views:ProgressDialog Grid.Column="1" />
-			<views:SelectionDialog Grid.Column="2" />
-
-		</Grid>
+		<TabControl>
+			<TabItem Header="Alert Dialog">
+				<views:AlertDialog />
+			</TabItem>
+			<TabItem Header="Progress Dialog">
+				<views:ProgressDialog />
+			</TabItem>
+			<TabItem Header="Selection Dialog">
+				<views:SelectionDialog />
+			</TabItem>
+		</TabControl>
 	</materialDesign:DialogHost>
 </Window>
