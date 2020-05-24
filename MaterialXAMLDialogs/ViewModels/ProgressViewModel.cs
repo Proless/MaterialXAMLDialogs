@@ -109,7 +109,7 @@ namespace MaterialXAMLDialogs.ViewModels
 		public void Cancel(object obj)
 		{
 			CancellationTokenSource?.Cancel();
-			Session?.Close(true);
+			Session?.Close();
 		}
 	}
 }
