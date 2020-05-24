@@ -50,7 +50,10 @@ namespace MaterialXAMLDialogs
 		}
 		public void Close()
 		{
-			_dialogSession?.Close();
+			if (_dialogSession != null && !_dialogSession.IsEnded)
+			{
+				_dialogSession?.Close();
+			}
 			_isOpen = false;
 		}
 
