@@ -10,7 +10,7 @@
 		OK,
 		Retry,
 		Yes,
-		Cancelled,
+		// Not yet implemented
 		Accept,
 		Discard,
 		Agree,
