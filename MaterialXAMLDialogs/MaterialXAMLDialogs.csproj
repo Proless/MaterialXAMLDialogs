@@ -2,9 +2,10 @@
 	<PropertyGroup>
 		<TargetFrameworks>net45;netcoreapp3.1</TargetFrameworks>
 		<UseWPF>true</UseWPF>
+		<UserSecretsId>d7ba259c-7bd2-45a8-85df-6ce9cd197918</UserSecretsId>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="MaterialDesignThemes" Version="3.1.2" />
+		<PackageReference Include="MaterialDesignThemes" Version="3.2.0-ci1494" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Update="Dialogs\UserControl1.xaml">
