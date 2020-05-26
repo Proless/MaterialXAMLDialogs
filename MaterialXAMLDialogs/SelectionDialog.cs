@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using MaterialDesignThemes.Wpf;
@@ -29,7 +30,7 @@ namespace MaterialXAMLDialogs
 		}
 
 		// Methods
-		public Task<T> Show(string dialogHosId, IEnumerable<T> items, string displayMemberPath)
+		public Task<T> Show(string dialogHosId, IEnumerable<T> items, Func<T, string> displayMemberValue)
 		{
 			if (_isOpen)
 			{
@@ -39,8 +40,7 @@ namespace MaterialXAMLDialogs
 			{
 				_isOpen = true;
 				// replace with interface 
-				(_dialogViewModel as SelectionViewModel<T>).DisplayMemberPath = displayMemberPath;
-				(_dialogViewModel as SelectionViewModel<T>).Items = items;
+				(_dialogViewModel as SelectionViewModel<T>).Items = ConstructItems(items, displayMemberValue);
 				return DialogHost.Show(_dialogView, dialogHosId, OnDialogOpened, OnDialogClosing)
 					.ContinueWith(t =>
 					{
@@ -52,7 +52,7 @@ namespace MaterialXAMLDialogs
 		{
 			if (_dialogSession != null && !_dialogSession.IsEnded)
 			{
-				_dialogSession?.Close();
+				_dialogSession.Close();
 			}
 			_isOpen = false;
 		}
@@ -62,7 +62,6 @@ namespace MaterialXAMLDialogs
 		{
 			_dialogViewModel = new SelectionViewModel<T>
 			{
-				DisplayMemberPath = configuration.DisplayMemberPath,
 				Title = configuration.Title,
 				ShowTitleSeparator = configuration.ShowTitleSeparator
 			};
@@ -87,6 +86,18 @@ namespace MaterialXAMLDialogs
 		private void OnDialogOpened(object sender, DialogOpenedEventArgs eventArgs)
 		{
 			_dialogSession = eventArgs.Session;
+		}
+		private IEnumerable<SelectionItem<T>> ConstructItems(IEnumerable<T> items, Func<T, string> displayMemberValue)
+		{
+			foreach (var item in items)
+			{
+				var selectionItem = new SelectionItem<T>
+				{
+					Item = item,
+					DisplayValue = displayMemberValue(item)
+				};
+				yield return selectionItem;
+			}
 		}
 	}
 }

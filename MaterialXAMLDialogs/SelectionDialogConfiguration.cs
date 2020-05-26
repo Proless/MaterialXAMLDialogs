@@ -6,6 +6,5 @@ namespace MaterialXAMLDialogs
 	{
 		public string Title { get; set; }
 		public bool ShowTitleSeparator { get; set; }
-		public string DisplayMemberPath { get; set; }
 	}
 }

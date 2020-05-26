@@ -1,6 +1,7 @@
 ﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 			 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:viewModels="clr-namespace:MaterialXAMLDialogs.ViewModels"
 			 x:Class="MaterialXAMLDialogs.Dialogs.SelectionView"
 			 x:ClassModifier="internal"
 			 TextElement.FontWeight="Medium"
@@ -19,6 +20,7 @@
 			<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 		</ResourceDictionary>
 	</UserControl.Resources>
+
 	<Grid>
 		<Grid.RowDefinitions>
 			<!--Title row-->
@@ -62,10 +64,17 @@
 					  Margin="5 3"
 					  HorizontalScrollBarVisibility="Disabled"
 					  VerticalScrollBarVisibility="Auto">
-			<ListBox ItemsSource="{Binding Items}"
-					 SelectedItem="{Binding SelectedItem}"
-					 DisplayMemberPath="{Binding DisplayMemberPath}">
-			</ListBox>
+			<ItemsControl ItemsSource="{Binding Items}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Button Content="{Binding DisplayValue}"
+								Margin="0 2"
+								Style="{DynamicResource MaterialDesignFlatButton}"
+								Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+								CommandParameter="{Binding Item}" />
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
 		</ScrollViewer>
 
 		<!--Row 3-->
@@ -76,26 +85,12 @@
 				   Style="{DynamicResource MaterialDesignSeparator}" />
 
 		<!--Row 4-->
-		<StackPanel Grid.Row="4"
-					Grid.Column="1"
-					VerticalAlignment="Center"
-					HorizontalAlignment="Right"
-					Orientation="Horizontal">
-
-			<Button  Grid.Column="0"
-					 Content="_Cancel"
-					 Margin="0 0 3 0"
-					 Style="{DynamicResource MaterialDesignFlatButton}"
-					 Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" />
-
-			<Button  Grid.Column="1"
-					 Content="_Choose"
-					 Margin="3 0 0 0"
-					 Style="{DynamicResource MaterialDesignFlatButton}"
-					 Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
-					 CommandParameter="{Binding SelectedItem}"
-					 Padding="14,4,16,4" />
-		</StackPanel>
-
+		<Button Grid.Row="4"
+				Grid.Column="1"
+				Content="_Cancel"
+				Margin="3 3 3 5"
+				HorizontalAlignment="Right"
+				Style="{DynamicResource MaterialDesignFlatButton}"
+				Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" />
 	</Grid>
 </UserControl>
