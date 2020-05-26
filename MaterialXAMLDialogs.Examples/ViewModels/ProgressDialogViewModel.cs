@@ -64,12 +64,18 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 			{
 				if (x == 100)
 				{
-					dialog.ShowProgress(x);
+					if (!IsIndeterminate)
+					{
+						dialog.ShowProgress(x);
+					}
 					dialog.UpdateDialog(false, true, "Finishing up...");
 				}
 				else
 				{
-					dialog.ShowProgress(x, $"{x}%");
+					if (!IsIndeterminate)
+					{
+						dialog.ShowProgress(x, $"{x}%");
+					}
 				}
 			});
 

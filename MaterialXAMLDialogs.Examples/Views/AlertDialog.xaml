@@ -19,15 +19,15 @@
 	</UserControl.DataContext>
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="1*" />
-			<RowDefinition Height="1*" />
-			<RowDefinition Height="2*" />
-			<RowDefinition Height="1*" />
-			<RowDefinition Height="1*" />
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
-			<RowDefinition Height="1*" />
-			<RowDefinition Height="1*" />
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 
 		<!--Row 0-->
