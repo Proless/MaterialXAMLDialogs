@@ -46,7 +46,7 @@
 				   VerticalAlignment="Center"
 				   HorizontalAlignment="Center"
 				   Margin="3 3 3 0"
-				   FontSize="18"
+				   FontSize="16"
 				   TextTrimming="CharacterEllipsis"
 				   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"
 				   Text="{Binding Title}" />
