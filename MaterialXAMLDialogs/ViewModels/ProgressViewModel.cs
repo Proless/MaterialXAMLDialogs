@@ -5,7 +5,7 @@ using MaterialXAMLDialogs.Framework;
 
 namespace MaterialXAMLDialogs.ViewModels
 {
-	public class ProgressViewModel : DialogViewModelBase, IDialogViewModel
+	internal class ProgressViewModel : DialogViewModelBase, IDialogViewModel
 	{
 		// Fields
 		private PackIconKind? _iconKind;
