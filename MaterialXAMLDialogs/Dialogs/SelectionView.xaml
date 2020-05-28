@@ -70,6 +70,7 @@
 						<Button Content="{Binding DisplayValue}"
 								Margin="0 2"
 								Style="{DynamicResource MaterialDesignFlatButton}"
+								VerticalContentAlignment="Center"
 								Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
 								CommandParameter="{Binding Item}" />
 					</DataTemplate>
