@@ -25,6 +25,7 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 		public IEnumerable<PackIconKind> Icons { get; set; }
 		public PackIconKind SelectedIcon { get; set; }
 		public RelayCommand ShowDialogCommand { get; set; }
+		public RelayCommand ShowIndeterminateDialogCommand { get; set; }
 
 		// Constructors
 		public ProgressDialogViewModel()
@@ -39,6 +40,7 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 			IconColor = _paletteHelper.GetTheme().SecondaryMid.Color;
 			Icons = Enum.GetValues(typeof(PackIconKind)).Cast<PackIconKind>();
 			ShowDialogCommand = new RelayCommand(x => true, ShowDialog);
+			ShowIndeterminateDialogCommand = new RelayCommand(x => true, ShowIndeterminateDialog);
 			SelectedIcon = PackIconKind.Information;
 		}
 
@@ -87,12 +89,22 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 			}
 			catch (OperationCanceledException)
 			{
-				// freeup resources / log or something 
+				// free up resources / log or something 
 			}
 			finally
 			{
 				dialog.Close();
 			}
+		}
+		private async void ShowIndeterminateDialog(object obj)
+		{
+			var dialog = new IndeterminateDialog();
+
+			dialog.Show("Root", Title, SupportingText, ShowTitleSeparator);
+
+			await Task.Delay(6000);
+
+			dialog.Close();
 		}
 		private async Task SomeIntensiveWork(IProgress<int> progress, CancellationToken cancellationToken)
 		{

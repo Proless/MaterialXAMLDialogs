@@ -117,6 +117,10 @@
 					Margin="5"
 					HorizontalAlignment="Left"
 					Command="{Binding ShowDialogCommand}" />
+			<Button Content="Something !"
+					Margin="5"
+					HorizontalAlignment="Left"
+					Command="{Binding ShowIndeterminateDialogCommand}" />
 		</StackPanel>
 	</Grid>
 </UserControl>
