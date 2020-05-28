@@ -4,7 +4,7 @@ A small helper Library to use with MaterialDesignInXamlToolkit, it allows displa
 ## Dialog Types
 
 ### Alert Dialog
-![Sample](https://i.imgur.com/qUOMjw8.png)
+![Alert](https://i.imgur.com/gNSVyhs.png)
 
 Buttons can be :
 - OK,
@@ -18,7 +18,8 @@ Icon is of type PackIcon so you can use any icon kind from [MaterialDesigninXaml
 It is also possible to set the foreground brush of the Icon. 
 
 ### Selection Dialog
-WIP
+![Selection](https://i.imgur.com/zQ3g2Tj.png)
 
 ### Progress Dialog
-WIP
+![Determinate Progress](https://i.imgur.com/r4zjWqI.png)
+![InDeterminate Progress](https://i.imgur.com/JFR0HP7.png)
