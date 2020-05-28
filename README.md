@@ -21,5 +21,10 @@ It is also possible to set the foreground brush of the Icon.
 ![Selection](https://i.imgur.com/zQ3g2Tj.png)
 
 ### Progress Dialog
-![Determinate Progress](https://i.imgur.com/r4zjWqI.png)
-![InDeterminate Progress](https://i.imgur.com/JFR0HP7.png)
+![Determinate](https://i.imgur.com/r4zjWqI.png)
+
+![InDeterminate](https://i.imgur.com/JFR0HP7.png)
+
+# Circular Indeterminate Progress Dialog
+
+![Circular InDeterminate Progress](https://i.imgur.com/4q2EUwo.png)
