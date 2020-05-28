@@ -15,18 +15,26 @@
 		WindowStartupLocation="CenterScreen"
 		MinHeight="600"
 		Width="450">
-	<materialDesign:DialogHost Identifier="Root"
-							   CloseOnClickAway="True">
-		<TabControl>
-			<TabItem Header="Alert Dialog">
-				<views:AlertDialog />
-			</TabItem>
-			<TabItem Header="Progress Dialog">
-				<views:ProgressDialog />
-			</TabItem>
-			<TabItem Header="Selection Dialog">
-				<views:SelectionDialog />
-			</TabItem>
-		</TabControl>
-	</materialDesign:DialogHost>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<materialDesign:DialogHost Identifier="Root"
+								   CloseOnClickAway="True">
+
+
+			<TabControl>
+				<TabItem Header="Alert Dialog">
+					<views:AlertDialog />
+				</TabItem>
+				<TabItem Header="Progress Dialog">
+					<views:ProgressDialog />
+				</TabItem>
+				<TabItem Header="Selection Dialog">
+					<views:SelectionDialog />
+				</TabItem>
+			</TabControl>
+		</materialDesign:DialogHost>
+	</Grid>
 </Window>
