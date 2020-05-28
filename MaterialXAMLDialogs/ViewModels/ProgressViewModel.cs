@@ -33,7 +33,7 @@ namespace MaterialXAMLDialogs.ViewModels
 				{
 					_iconBrush = new SolidColorBrush(Colors.Black);
 				}
-				Notify();
+				NotifyOfPropertyChanged();
 			}
 		}
 		public PackIconKind? IconKind
@@ -51,52 +51,52 @@ namespace MaterialXAMLDialogs.ViewModels
 					_iconKind = value;
 					ShowIcon = true;
 				}
-				Notify();
+				NotifyOfPropertyChanged();
 			}
 		}
 		public bool ShowTitleSeparator
 		{
 			get { return _showTitleSeparator; }
-			set { _showTitleSeparator = value; Notify(); }
+			set { _showTitleSeparator = value; NotifyOfPropertyChanged(); }
 		}
 		public bool ShowIcon
 		{
 			get { return _showIcon; }
-			private set { _showIcon = value; Notify(); }
+			private set { _showIcon = value; NotifyOfPropertyChanged(); }
 		}
 		public bool IsIndeterminate
 		{
 			get { return _isIndeterminate; }
 			set
-			{ _isIndeterminate = value; Notify(); }
+			{ _isIndeterminate = value; NotifyOfPropertyChanged(); }
 		}
 		public bool Cancellable
 		{
 			get { return _cancellable; }
 			set
-			{ _cancellable = value; Notify(); }
+			{ _cancellable = value; NotifyOfPropertyChanged(); }
 		}
 		public string SupportingText
 		{
 			get { return _supportingText; }
-			set { _supportingText = value; Notify(); }
+			set { _supportingText = value; NotifyOfPropertyChanged(); }
 		}
 		public string Title
 		{
 			get { return _title; }
-			set { _title = value; Notify(); }
+			set { _title = value; NotifyOfPropertyChanged(); }
 		}
 		public string ProgressText
 		{
 			get { return _progressText; }
 			set
-			{ _progressText = value; Notify(); }
+			{ _progressText = value; NotifyOfPropertyChanged(); }
 		}
 		public double Progress
 		{
 			get { return _progress; }
 			set
-			{ _progress = value; Notify(); }
+			{ _progress = value; NotifyOfPropertyChanged(); }
 		}
 
 		//Constructors

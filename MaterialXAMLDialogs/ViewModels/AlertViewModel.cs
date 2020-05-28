@@ -55,7 +55,7 @@ namespace MaterialXAMLDialogs.ViewModels
 					_iconKind = value;
 					ShowIcon = true;
 				}
-				Notify();
+				NotifyOfPropertyChanged();
 			}
 		}
 		public Brush IconBrush
@@ -68,53 +68,53 @@ namespace MaterialXAMLDialogs.ViewModels
 				{
 					_iconBrush = new SolidColorBrush(Colors.Black);
 				}
-				Notify();
+				NotifyOfPropertyChanged();
 			}
 		}
 		public UserControl Buttons
 		{
 			get { return _buttons; }
-			private set { _buttons = value; Notify(); }
+			private set { _buttons = value; NotifyOfPropertyChanged(); }
 		}
 		public bool ShowButtons
 		{
 			get { return _showButtons; }
-			private set { _showButtons = value; Notify(); }
+			private set { _showButtons = value; NotifyOfPropertyChanged(); }
 		}
 		public bool ShowTitleSeparator
 		{
 			get { return _showTitleSeparator; }
-			set { _showTitleSeparator = value; Notify(); }
+			set { _showTitleSeparator = value; NotifyOfPropertyChanged(); }
 		}
 		public bool ShowIcon
 		{
 			get { return _showIcon; }
-			private set { _showIcon = value; Notify(); }
+			private set { _showIcon = value; NotifyOfPropertyChanged(); }
 		}
 		public bool ShowAdditionalOption
 		{
 			get { return _showAdditionalOption; }
-			set { _showAdditionalOption = value; Notify(); }
+			set { _showAdditionalOption = value; NotifyOfPropertyChanged(); }
 		}
 		public bool IsAdditionalOptionChecked
 		{
 			get { return _isAdditionalOptionChecked; }
-			set { _isAdditionalOptionChecked = value; Notify(); }
+			set { _isAdditionalOptionChecked = value; NotifyOfPropertyChanged(); }
 		}
 		public string AdditionalOptionText
 		{
 			get { return _additionalOptionText; }
-			set { _additionalOptionText = value; Notify(); }
+			set { _additionalOptionText = value; NotifyOfPropertyChanged(); }
 		}
 		public string SupportingText
 		{
 			get { return _supportingText; }
-			set { _supportingText = value; Notify(); }
+			set { _supportingText = value; NotifyOfPropertyChanged(); }
 		}
 		public string Title
 		{
 			get { return _title; }
-			set { _title = value; Notify(); }
+			set { _title = value; NotifyOfPropertyChanged(); }
 		}
 	}
 }

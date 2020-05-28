@@ -5,7 +5,7 @@ namespace MaterialXAMLDialogs.Framework
 {
 	public class DialogViewModelBase : INotifyPropertyChanged
 	{
-		public void Notify([CallerMemberName] string propertyName = "")
+		public void NotifyOfPropertyChanged([CallerMemberName] string propertyName = "")
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
