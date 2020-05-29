@@ -36,6 +36,12 @@ namespace MaterialXAMLDialogs
 				return DialogHost.Show(_dialogView, dialogHostId, OnDialogOpened, OnDialogClosing);
 			}
 		}
+		public void Update(string title = null, string supportingText = null)
+		{
+			var vm = (_dialogViewModel as IndeterminateViewModel);
+			vm.Title = title ?? vm.Title;
+			vm.SupportingText = supportingText ?? vm.SupportingText;
+		}
 		public void Close()
 		{
 			if (_dialogSession != null && !_dialogSession.IsEnded)

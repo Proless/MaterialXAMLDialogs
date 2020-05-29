@@ -26,7 +26,7 @@ namespace MaterialXAMLDialogs
 		}
 
 		// Methods
-		public Task Show(string dialogHostId, CancellationTokenSource cancellationTokenSource)
+		public Task Show(string dialogHostId, CancellationTokenSource cancellationTokenSource = null)
 		{
 			if (_isOpened)
 			{
@@ -53,12 +53,17 @@ namespace MaterialXAMLDialogs
 			}
 			_isOpened = false;
 		}
-		public void UpdateDialog(bool cancellable, bool isIndeterminate, string title = null, string supportingText = null)
+		public void UpdateDialog(bool cancellable, bool isIndeterminate)
 		{
 			// replace with Interface
 			var _viewModel = (_dialogViewModel as ProgressViewModel);
 			_viewModel.Cancellable = cancellable;
 			_viewModel.IsIndeterminate = isIndeterminate;
+		}
+		public void UpdateText(string title = null, string supportingText = null)
+		{
+			// replace with Interface
+			var _viewModel = (_dialogViewModel as ProgressViewModel);
 			_viewModel.Title = title ?? _viewModel.Title;
 			_viewModel.SupportingText = supportingText ?? _viewModel.SupportingText;
 		}
@@ -67,7 +72,7 @@ namespace MaterialXAMLDialogs
 			// replace with Interface
 			var _viewModel = (_dialogViewModel as ProgressViewModel);
 			_viewModel.Progress = progress;
-			_viewModel.ProgressText = progressText;
+			_viewModel.ProgressText = progressText ?? _viewModel.ProgressText;
 		}
 
 		// Helpers

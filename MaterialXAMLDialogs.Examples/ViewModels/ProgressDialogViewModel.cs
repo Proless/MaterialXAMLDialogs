@@ -64,20 +64,11 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 			// Simulate some work with progress.
 			Progress<int> progress = new Progress<int>(async x =>
 			{
+				dialog.ShowProgress(x, $"{x}%");
 				if (x == 100)
 				{
-					if (!IsIndeterminate)
-					{
-						dialog.ShowProgress(x);
-					}
-					dialog.UpdateDialog(false, true, "Finishing up...");
-				}
-				else
-				{
-					if (!IsIndeterminate)
-					{
-						dialog.ShowProgress(x, $"{x}%");
-					}
+					dialog.UpdateDialog(false, true);
+					dialog.UpdateText("Finishing up...");
 				}
 			});
 
