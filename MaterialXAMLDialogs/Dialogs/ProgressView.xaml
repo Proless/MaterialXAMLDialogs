@@ -7,9 +7,9 @@
 			 TextElement.FontSize="14"
 			 FontFamily="{materialDesign:MaterialDesignFont}"
 			 MinHeight="160"
-			 MaxHeight="400"
-			 MinWidth="340"
-			 MaxWidth="340">
+			 MaxHeight="520"
+			 MinWidth="260"
+			 MaxWidth="520">
 
 	<UserControl.Resources>
 		<ResourceDictionary>
@@ -75,7 +75,7 @@
 				   VerticalAlignment="Center"
 				   TextTrimming="CharacterEllipsis"
 				   Text="{Binding SupportingText}"
-				   Style="{DynamicResource MaterialDesignBody1TextBlock}" />
+				   Style="{DynamicResource MaterialDesignBody2TextBlock}" />
 
 		<!--Row 3-->
 		<Grid Grid.Row="3"
