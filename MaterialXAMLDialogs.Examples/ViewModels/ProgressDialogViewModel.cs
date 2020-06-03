@@ -62,7 +62,7 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 			CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
 			// Simulate some work with progress.
-			Progress<int> progress = new Progress<int>(async x =>
+			Progress<int> progress = new Progress<int>(x =>
 			{
 				dialog.ShowProgress(x, $"{x}%");
 				if (x == 100)
@@ -72,7 +72,7 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 				}
 			});
 
-			dialog.Show("Root", cancellationTokenSource);
+			var dialogTask = dialog.Show("Root", cancellationTokenSource);
 
 			try
 			{
@@ -86,16 +86,20 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 			{
 				dialog.Close();
 			}
+
+			await dialogTask;
 		}
 		private async void ShowIndeterminateDialog(object obj)
 		{
 			var dialog = new IndeterminateDialog();
 
-			dialog.Show("Root", Title, SupportingText, ShowTitleSeparator);
+			var dialogTask = dialog.Show("Root", Title, SupportingText, ShowTitleSeparator);
 
 			await Task.Delay(6000);
 
 			dialog.Close();
+
+			await dialogTask;
 		}
 		private async Task SomeIntensiveWork(IProgress<int> progress, CancellationToken cancellationToken)
 		{
