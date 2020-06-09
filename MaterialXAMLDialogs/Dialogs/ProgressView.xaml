@@ -8,8 +8,8 @@
 			 FontFamily="{materialDesign:MaterialDesignFont}"
 			 MinHeight="160"
 			 MaxHeight="520"
-			 MinWidth="340"
-			 MaxWidth="340">
+			 MinWidth="260"
+			 MaxWidth="520">
 
 	<UserControl.Resources>
 		<ResourceDictionary>
