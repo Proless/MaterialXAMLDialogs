@@ -11,10 +11,14 @@
 		<Description>A small helper Library to use with MaterialDesignInXamlToolkit, it allows displaying some common dialogs and returning a result similar to the old fashoined MessageBox class in WinForms.</Description>
 		<Copyright>Copyright (c) 2020 Hasan Darwish</Copyright>
 		<RepositoryUrl>https://github.com/Proless/MaterialXAMLDialogs</RepositoryUrl>
-		<PackageTags>Dialog, Materialdesigninxaml, Wpf</PackageTags>
-		<PackageReleaseNotes>Initial version</PackageReleaseNotes>
+		<PackageTags>MaterialDesignThemes, Material, ,XAML, UI, WPF, Dialogs, Dialog, MVVM, MessageBox</PackageTags>
+		<PackageReleaseNotes>Initial stable version</PackageReleaseNotes>
 		<PackageId>MaterialXAMLDialogs</PackageId>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Version>1.0.2</Version>
+		<AssemblyVersion>1.0.2.0</AssemblyVersion>
+		<PackageProjectUrl>https://github.com/Proless/MaterialXAMLDialogs</PackageProjectUrl>
+		<FileVersion>1.0.2.0</FileVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="MaterialDesignThemes" Version="3.1.3" />
