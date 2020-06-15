@@ -3,9 +3,21 @@
 		<TargetFrameworks>net45;netcoreapp3.1</TargetFrameworks>
 		<UseWPF>true</UseWPF>
 		<UserSecretsId>d7ba259c-7bd2-45a8-85df-6ce9cd197918</UserSecretsId>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<Authors>Hasan Darwish</Authors>
+		<Title>MaterialXAMLDialogs</Title>
+		<Company>hasan.darwish</Company>
+		<Description>A small helper Library to use with MaterialDesignInXamlToolkit, it allows displaying some common dialogs and returning a result similar to the old fashoined MessageBox class in WinForms.</Description>
+		<Copyright>Copyright (c) 2020 Hasan Darwish</Copyright>
+		<RepositoryUrl>https://github.com/Proless/MaterialXAMLDialogs</RepositoryUrl>
+		<PackageTags>Dialog, Materialdesigninxaml, Wpf</PackageTags>
+		<PackageReleaseNotes>Initial version</PackageReleaseNotes>
+		<PackageId>MaterialXAMLDialogs</PackageId>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="MaterialDesignThemes" Version="3.2.0-ci1494" />
+		<PackageReference Include="MaterialDesignThemes" Version="3.1.3" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Update="Dialogs\UserControl1.xaml">
