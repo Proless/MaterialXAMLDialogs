@@ -55,7 +55,9 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 				IsIndeterminate = IsIndeterminate,
 				ShowTitleSeparator = ShowTitleSeparator,
 				SupportingText = SupportingText,
-				Title = Title
+				Title = Title,
+				MaxWidth = 360,
+				MinWidth = 360
 			};
 
 			var dialog = new ProgressDialog(config);
