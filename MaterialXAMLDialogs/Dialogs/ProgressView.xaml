@@ -8,8 +8,8 @@
 			 FontFamily="{materialDesign:MaterialDesignFont}"
 			 MinHeight="160"
 			 MaxHeight="520"
-			 MinWidth="260"
-			 MaxWidth="520">
+			 MinWidth="{Binding MinWidth}"
+			 MaxWidth="{Binding MaxWidth}">
 
 	<UserControl.Resources>
 		<ResourceDictionary>
@@ -86,8 +86,6 @@
 				<ColumnDefinition Width="Auto" />
 				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
-
-
 
 			<ProgressBar Grid.Column="0"
 						 Value="{Binding Progress}"

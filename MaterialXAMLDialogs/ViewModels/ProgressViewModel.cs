@@ -98,6 +98,8 @@ namespace MaterialXAMLDialogs.ViewModels
 			set
 			{ _progress = value; NotifyOfPropertyChanged(); }
 		}
+		public double MaxWidth { get; set; } = 520;
+		public double MinWidth { get; set; } = 260;
 
 		//Constructors
 		public ProgressViewModel()

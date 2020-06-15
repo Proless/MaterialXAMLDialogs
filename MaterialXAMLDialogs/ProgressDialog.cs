@@ -86,7 +86,9 @@ namespace MaterialXAMLDialogs
 				IsIndeterminate = configuration.IsIndeterminate,
 				ShowTitleSeparator = configuration.ShowTitleSeparator,
 				SupportingText = configuration.SupportingText,
-				Title = configuration.Title
+				Title = configuration.Title,
+				MaxWidth = configuration.MaxWidth,
+				MinWidth = configuration.MinWidth
 			};
 
 			_dialogView = new ProgressView()

@@ -13,5 +13,8 @@ namespace MaterialXAMLDialogs
 		public string Title { get; set; }
 		public bool IsIndeterminate { get; set; }
 		public bool Cancellable { get; set; }
+		public double MaxWidth { get; set; } = 520;
+		public double MinWidth { get; set; } = 260;
+
 	}
 }
