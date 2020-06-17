@@ -8,7 +8,7 @@
 		<Authors>Hasan Darwish</Authors>
 		<Title>MaterialXAMLDialogs</Title>
 		<Company>hasan.darwish</Company>
-		<Description>A small helper Library to use with MaterialDesignInXamlToolkit, it allows displaying some common dialogs and returning a result similar to the old fashoined MessageBox class in WinForms.</Description>
+		<Description>A small helper Library to use with MaterialDesignInXamlToolkit, it allows displaying some common dialogs and returning a result similar to the old fashioned MessageBox class in WinForms.</Description>
 		<Copyright>Copyright (c) 2020 Hasan Darwish</Copyright>
 		<RepositoryUrl>https://github.com/Proless/MaterialXAMLDialogs</RepositoryUrl>
 		<PackageTags>MaterialDesignThemes, Material, ,XAML, UI, WPF, Dialogs, Dialog, MVVM, MessageBox</PackageTags>
