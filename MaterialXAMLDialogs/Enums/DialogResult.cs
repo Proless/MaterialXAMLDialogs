@@ -2,11 +2,11 @@
 {
 	public enum DialogResult
 	{
+		None,
 		Abort,
 		Cancel,
 		Ignore,
 		No,
-		None,
 		OK,
 		Retry,
 		Yes,
