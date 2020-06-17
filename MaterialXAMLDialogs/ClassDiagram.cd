@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MaterialXAMLDialogs.AlertDialog" Collapsed="true">
+    <Position X="1" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAQEAAAIAIAAAAAAAEA=</HashCode>
+      <FileName>AlertDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaterialXAMLDialogs.IndeterminateDialog" Collapsed="true">
+    <Position X="3.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>IndeterminateDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaterialXAMLDialogs.ProgressDialog" Collapsed="true">
+    <Position X="5.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAkAAAAQAAAAAAAAAAQEAAAAAAAAAACAAEA=</HashCode>
+      <FileName>ProgressDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaterialXAMLDialogs.SelectionDialog&lt;T&gt;" Collapsed="true">
+    <Position X="7.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAQAAAQEAAAIAAAAAAAAAEQ=</HashCode>
+      <FileName>SelectionDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaterialXAMLDialogs.Framework.DialogBase&lt;T&gt;" Collapsed="true">
+    <Position X="4.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAAAAAAAAAAAAAAAABAAAAAAAAIAAAAAgCIAAA=</HashCode>
+      <FileName>Framework\DialogBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaterialXAMLDialogs.Framework.DialogViewModelBase" Collapsed="true">
+    <Position X="14.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\DialogViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaterialXAMLDialogs.ViewModels.AlertViewModel" Collapsed="true">
+    <Position X="15.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MEBAAAQAFIAhAVAgIAAACAAEAAIJAQACgAAAQAAAAAA=</HashCode>
+      <FileName>ViewModels\AlertViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaterialXAMLDialogs.ViewModels.IndeterminateViewModel" Collapsed="true">
+    <Position X="17.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEIAAAFAAAAAACAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\IndeterminateViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaterialXAMLDialogs.ViewModels.ProgressViewModel" Collapsed="true">
+    <Position X="11" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UABAAAQAUIABIFAAABACCAQAIBAABQACgAAQAACAABA=</HashCode>
+      <FileName>ViewModels\ProgressViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaterialXAMLDialogs.ViewModels.SelectionViewModel&lt;T&gt;" Collapsed="true">
+    <Position X="13.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACFAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\SelectionViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="MaterialXAMLDialogs.Interfaces.DialogViewModels.IAlertViewModel" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAgAAAgIAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Interfaces\DialogViewModels\IAlertViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MaterialXAMLDialogs.Interfaces.DialogViewModels.IDialogViewModel" Collapsed="true">
+    <Position X="9.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\DialogViewModels\IDialogViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MaterialXAMLDialogs.Interfaces.DialogViewModels.IIndeterminateViewModel" Collapsed="true">
+    <Position X="14.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\DialogViewModels\IIndeterminateViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MaterialXAMLDialogs.Interfaces.DialogViewModels.IProgressViewModel" Collapsed="true">
+    <Position X="12" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAIAAAABAAAAQAAAAABAAAAAAAAACAAAA=</HashCode>
+      <FileName>Interfaces\DialogViewModels\IProgressViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MaterialXAMLDialogs.Interfaces.DialogViewModels.ISelectionViewModel&lt;T&gt;" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\DialogViewModels\ISelectionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MaterialXAMLDialogs.Interfaces.IDisplayIcon" Collapsed="true">
+    <Position X="10" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAABAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDisplayIcon.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MaterialXAMLDialogs.Interfaces.IDisplaySupportingText" Collapsed="true">
+    <Position X="11" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDisplaySupportingText.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
