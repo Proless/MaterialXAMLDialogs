@@ -1,5 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
-using MaterialXAMLDialogs.Framework;
+using MaterialXAMLDialogs.Interfaces.DialogConfigurations;
 using System.Windows.Media;
 
 namespace MaterialXAMLDialogs

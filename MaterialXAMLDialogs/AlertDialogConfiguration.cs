@@ -1,7 +1,7 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using System.Windows.Media;
+using MaterialDesignThemes.Wpf;
 using MaterialXAMLDialogs.Enums;
-using MaterialXAMLDialogs.Framework;
-using System.Windows.Media;
+using MaterialXAMLDialogs.Interfaces.DialogConfigurations;
 
 namespace MaterialXAMLDialogs
 {

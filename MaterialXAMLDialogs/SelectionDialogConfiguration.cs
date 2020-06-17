@@ -1,4 +1,4 @@
-﻿using MaterialXAMLDialogs.Framework;
+﻿using MaterialXAMLDialogs.Interfaces.DialogConfigurations;
 
 namespace MaterialXAMLDialogs
 {
