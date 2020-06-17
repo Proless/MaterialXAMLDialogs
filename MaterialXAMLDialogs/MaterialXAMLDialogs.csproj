@@ -12,13 +12,13 @@
 		<Copyright>Copyright (c) 2020 Hasan Darwish</Copyright>
 		<RepositoryUrl>https://github.com/Proless/MaterialXAMLDialogs</RepositoryUrl>
 		<PackageTags>MaterialDesignThemes, Material, ,XAML, UI, WPF, Dialogs, Dialog, MVVM, MessageBox</PackageTags>
-		<PackageReleaseNotes>Initial stable version</PackageReleaseNotes>
+		<PackageReleaseNotes>major refactoring of the code.</PackageReleaseNotes>
 		<PackageId>MaterialXAMLDialogs</PackageId>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Version>1.0.2</Version>
-		<AssemblyVersion>1.0.2.0</AssemblyVersion>
+		<Version>1.0.3</Version>
+		<AssemblyVersion>1.0.3.0</AssemblyVersion>
 		<PackageProjectUrl>https://github.com/Proless/MaterialXAMLDialogs</PackageProjectUrl>
-		<FileVersion>1.0.2.0</FileVersion>
+		<FileVersion>1.0.3.0</FileVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="MaterialDesignThemes" Version="3.1.3" />
