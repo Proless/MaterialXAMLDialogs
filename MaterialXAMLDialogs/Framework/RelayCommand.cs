@@ -7,7 +7,7 @@ namespace MaterialXAMLDialogs.Framework
 	{
 		// Fields
 		private readonly Predicate<object> _canExecute;
-		private readonly Action<object> _execute;
+		private readonly Action _execute;
 		private event EventHandler CanExecuteChangedInternal;
 
 		// Properties
@@ -26,7 +26,7 @@ namespace MaterialXAMLDialogs.Framework
 		}
 
 		// Constructors
-		public RelayCommand(Predicate<object> canExecute, Action<object> execute)
+		public RelayCommand(Predicate<object> canExecute, Action execute)
 		{
 			_canExecute = canExecute;
 			_execute = execute;
@@ -39,7 +39,7 @@ namespace MaterialXAMLDialogs.Framework
 		}
 		public void Execute(object parameter)
 		{
-			_execute(parameter);
+			_execute();
 		}
 		public void RaiseCanExecuteChanged()
 		{
