@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using MaterialXAMLDialogs.Framework;
+using MaterialXAMLDialogs.Interfaces.DialogViewModels;
 
 namespace MaterialXAMLDialogs.ViewModels
 {
-	internal class SelectionViewModel<T> : DialogViewModelBase, IDialogViewModel
+	internal class SelectionViewModel<T> : DialogViewModelBase, ISelectionViewModel<T>
 	{
 		// Properties
 		public bool ShowTitleSeparator { get; set; }

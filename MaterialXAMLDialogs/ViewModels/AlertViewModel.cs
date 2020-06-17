@@ -3,10 +3,11 @@ using System.Windows.Media;
 using MaterialDesignThemes.Wpf;
 using MaterialXAMLDialogs.Enums;
 using MaterialXAMLDialogs.Framework;
+using MaterialXAMLDialogs.Interfaces.DialogViewModels;
 
 namespace MaterialXAMLDialogs.ViewModels
 {
-	internal class AlertViewModel : DialogViewModelBase, IDialogViewModel
+	internal class AlertViewModel : DialogViewModelBase, IAlertViewModel
 	{
 		// Fields
 		private DialogButtons? _dialogButtons;
@@ -74,7 +75,7 @@ namespace MaterialXAMLDialogs.ViewModels
 		public UserControl Buttons
 		{
 			get { return _buttons; }
-			private set { _buttons = value; NotifyOfPropertyChanged(); }
+			set { _buttons = value; NotifyOfPropertyChanged(); }
 		}
 		public bool ShowButtons
 		{
@@ -89,7 +90,7 @@ namespace MaterialXAMLDialogs.ViewModels
 		public bool ShowIcon
 		{
 			get { return _showIcon; }
-			private set { _showIcon = value; NotifyOfPropertyChanged(); }
+			set { _showIcon = value; NotifyOfPropertyChanged(); }
 		}
 		public bool ShowAdditionalOption
 		{

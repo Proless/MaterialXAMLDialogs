@@ -2,10 +2,11 @@
 using System.Windows.Media;
 using MaterialDesignThemes.Wpf;
 using MaterialXAMLDialogs.Framework;
+using MaterialXAMLDialogs.Interfaces.DialogViewModels;
 
 namespace MaterialXAMLDialogs.ViewModels
 {
-	internal class ProgressViewModel : DialogViewModelBase, IDialogViewModel
+	internal class ProgressViewModel : DialogViewModelBase, IProgressViewModel
 	{
 		// Fields
 		private PackIconKind? _iconKind;
@@ -20,7 +21,6 @@ namespace MaterialXAMLDialogs.ViewModels
 		private bool _cancellable;
 
 		// Properties
-		public DialogSession Session { get; set; }
 		public RelayCommand CancelCommand { get; }
 		public CancellationTokenSource CancellationTokenSource { get; set; }
 		public Brush IconBrush
@@ -62,7 +62,7 @@ namespace MaterialXAMLDialogs.ViewModels
 		public bool ShowIcon
 		{
 			get { return _showIcon; }
-			private set { _showIcon = value; NotifyOfPropertyChanged(); }
+			set { _showIcon = value; NotifyOfPropertyChanged(); }
 		}
 		public bool IsIndeterminate
 		{
@@ -108,10 +108,9 @@ namespace MaterialXAMLDialogs.ViewModels
 		}
 
 		// Methods
-		public void Cancel(object obj)
+		public void Cancel()
 		{
 			CancellationTokenSource?.Cancel();
-			Session?.Close();
 		}
 	}
 }

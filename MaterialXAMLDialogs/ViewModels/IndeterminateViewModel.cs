@@ -1,8 +1,9 @@
 ﻿using MaterialXAMLDialogs.Framework;
+using MaterialXAMLDialogs.Interfaces.DialogViewModels;
 
 namespace MaterialXAMLDialogs.ViewModels
 {
-	internal class IndeterminateViewModel : DialogViewModelBase, IDialogViewModel
+	internal class IndeterminateViewModel : DialogViewModelBase, IIndeterminateViewModel
 	{
 		// Fields
 		private string _title;
