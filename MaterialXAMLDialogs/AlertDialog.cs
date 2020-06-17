@@ -1,21 +1,17 @@
 ﻿using System.Threading.Tasks;
-using System.Windows.Controls;
 using MaterialDesignThemes.Wpf;
 using MaterialXAMLDialogs.Dialogs;
 using MaterialXAMLDialogs.Enums;
 using MaterialXAMLDialogs.Framework;
+using MaterialXAMLDialogs.Interfaces.DialogViewModels;
 using MaterialXAMLDialogs.ViewModels;
 
 namespace MaterialXAMLDialogs
 {
-	public class AlertDialog
+	public class AlertDialog : DialogBase<DialogResult>
 	{
 		// Fields
-		private static readonly Task<DialogResult> _completedTask = Task.FromResult(DialogResult.None);
-		private UserControl _dialogView;
-		private IDialogViewModel _dialogViewModel;
-		private DialogSession _dialogSession;
-		private bool _isOpen;
+		private IAlertViewModel _dialogViewModel;
 
 		// Properties
 		public DialogResult Result { get; private set; }
@@ -33,7 +29,7 @@ namespace MaterialXAMLDialogs
 		{
 			if (_isOpen)
 			{
-				return _completedTask;
+				return _defaultCompletedTask;
 			}
 			else
 			{
@@ -44,14 +40,6 @@ namespace MaterialXAMLDialogs
 						return Result;
 					});
 			}
-		}
-		public void Close()
-		{
-			if (_dialogSession != null && !_dialogSession.IsEnded)
-			{
-				_dialogSession.Close();
-			}
-			_isOpen = false;
 		}
 
 		// Helpers
@@ -75,23 +63,18 @@ namespace MaterialXAMLDialogs
 				DataContext = _dialogViewModel
 			};
 		}
-		private void OnDialogClosing(object sender, DialogClosingEventArgs eventArgs)
+		protected override void OnDialogClosing(object sender, DialogClosingEventArgs eventArgs)
 		{
 			if (eventArgs.Parameter != null)
 			{
 				Result = (DialogResult)eventArgs.Parameter;
-				// replace with Interface
-				AdditionalOptionChecked = (_dialogViewModel as AlertViewModel).IsAdditionalOptionChecked;
+				AdditionalOptionChecked = _dialogViewModel.IsAdditionalOptionChecked;
 			}
 			else
 			{
 				Result = DialogResult.None;
 			}
 			_isOpen = false;
-		}
-		private void OnDialogOpened(object sender, DialogOpenedEventArgs eventArgs)
-		{
-			_dialogSession = eventArgs.Session;
 		}
 	}
 }

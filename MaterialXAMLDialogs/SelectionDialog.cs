@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using MaterialDesignThemes.Wpf;
 using MaterialXAMLDialogs.Dialogs;
 using MaterialXAMLDialogs.Framework;
+using MaterialXAMLDialogs.Interfaces.DialogViewModels;
 using MaterialXAMLDialogs.ViewModels;
 
 namespace MaterialXAMLDialogs
 {
-	public class SelectionDialog<T>
+	public class SelectionDialog<T> : DialogBase<T>
 	{
 		// Fields
-		private static readonly Task<T> _completedTask = Task.FromResult(default(T));
-		private UserControl _dialogView;
-		private IDialogViewModel _dialogViewModel;
-		private DialogSession _dialogSession;
-		private bool _isOpen;
+		private ISelectionViewModel<T> _dialogViewModel;
 
 		// Properties
 		public T Result { get; private set; }
@@ -34,27 +30,18 @@ namespace MaterialXAMLDialogs
 		{
 			if (_isOpen)
 			{
-				return _completedTask;
+				return _defaultCompletedTask;
 			}
 			else
 			{
 				_isOpen = true;
-				// replace with interface 
-				(_dialogViewModel as SelectionViewModel<T>).Items = ConstructItems(items, displayMemberValue);
+				_dialogViewModel.Items = ConstructItems(items, displayMemberValue);
 				return DialogHost.Show(_dialogView, dialogHosId, OnDialogOpened, OnDialogClosing)
 					.ContinueWith(t =>
 					{
 						return Result;
 					});
 			}
-		}
-		public void Close()
-		{
-			if (_dialogSession != null && !_dialogSession.IsEnded)
-			{
-				_dialogSession.Close();
-			}
-			_isOpen = false;
 		}
 
 		// Helpers
@@ -71,7 +58,7 @@ namespace MaterialXAMLDialogs
 				DataContext = _dialogViewModel
 			};
 		}
-		private void OnDialogClosing(object sender, DialogClosingEventArgs eventArgs)
+		protected override void OnDialogClosing(object sender, DialogClosingEventArgs eventArgs)
 		{
 			if (eventArgs.Parameter != null)
 			{
@@ -82,10 +69,6 @@ namespace MaterialXAMLDialogs
 				Result = default;
 			}
 			_isOpen = false;
-		}
-		private void OnDialogOpened(object sender, DialogOpenedEventArgs eventArgs)
-		{
-			_dialogSession = eventArgs.Session;
 		}
 		private IEnumerable<SelectionItem<T>> ConstructItems(IEnumerable<T> items, Func<T, string> displayMemberValue)
 		{

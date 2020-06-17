@@ -1,78 +1,62 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using MaterialDesignThemes.Wpf;
 using MaterialXAMLDialogs.Dialogs;
 using MaterialXAMLDialogs.Framework;
+using MaterialXAMLDialogs.Interfaces.DialogViewModels;
 using MaterialXAMLDialogs.ViewModels;
 
 namespace MaterialXAMLDialogs
 {
-	public class ProgressDialog
+	public class ProgressDialog : DialogBase<object>
 	{
 		// Fields
-		private static readonly Task<object> _completedTask = Task.FromResult<object>(null);
-		private UserControl _dialogView;
-		private IDialogViewModel _dialogViewModel;
-		private DialogSession _dialogSession;
-		private bool _isOpened;
-
+		private IProgressViewModel _dialogViewModel;
 
 		// Constructors
 		public ProgressDialog(ProgressDialogConfiguration configuration)
 		{
-			_isOpened = false;
+			_isOpen = false;
 			InitializeDialog(configuration);
 		}
 
 		// Methods
 		public Task Show(string dialogHostId, CancellationTokenSource cancellationTokenSource = null)
 		{
-			if (_isOpened)
+			if (_isOpen)
 			{
-				return _completedTask;
+				return _defaultCompletedTask;
 			}
 			else
 			{
 				// replace with Interface
-				(_dialogViewModel as ProgressViewModel).CancellationTokenSource = cancellationTokenSource;
-				_isOpened = true;
+				_dialogViewModel.CancellationTokenSource = cancellationTokenSource;
+				_isOpen = true;
 				return DialogHost.Show(_dialogView, dialogHostId, OnDialogOpened, OnDialogClosing);
 			}
 		}
-		public void Close(bool cancel = false)
+		public void Close(bool cancel)
 		{
-			if (_dialogSession != null && !_dialogSession.IsEnded)
+			if (cancel)
 			{
-				if (cancel)
-				{
-					// replace with Interface
-					(_dialogViewModel as ProgressViewModel).CancellationTokenSource?.Cancel();
-				}
-				_dialogSession.Close();
+				_dialogViewModel.Cancel();
 			}
-			_isOpened = false;
+			base.Close();
 		}
 		public void UpdateDialog(bool cancellable, bool isIndeterminate)
 		{
-			// replace with Interface
-			var _viewModel = (_dialogViewModel as ProgressViewModel);
-			_viewModel.Cancellable = cancellable;
-			_viewModel.IsIndeterminate = isIndeterminate;
+			_dialogViewModel.Cancellable = cancellable;
+			_dialogViewModel.IsIndeterminate = isIndeterminate;
 		}
 		public void UpdateText(string title = null, string supportingText = null)
 		{
-			// replace with Interface
-			var _viewModel = (_dialogViewModel as ProgressViewModel);
-			_viewModel.Title = title ?? _viewModel.Title;
-			_viewModel.SupportingText = supportingText ?? _viewModel.SupportingText;
+			_dialogViewModel.Title = title ?? _dialogViewModel.Title;
+			_dialogViewModel.SupportingText = supportingText ?? _dialogViewModel.SupportingText;
 		}
 		public void ShowProgress(double progress, string progressText = null)
 		{
-			// replace with Interface
-			var _viewModel = (_dialogViewModel as ProgressViewModel);
-			_viewModel.Progress = progress;
-			_viewModel.ProgressText = progressText ?? _viewModel.ProgressText;
+			_dialogViewModel.Progress = progress;
+			_dialogViewModel.ProgressText = progressText ?? _dialogViewModel.ProgressText;
 		}
 
 		// Helpers
@@ -95,16 +79,6 @@ namespace MaterialXAMLDialogs
 			{
 				DataContext = _dialogViewModel
 			};
-		}
-		private void OnDialogClosing(object sender, DialogClosingEventArgs eventArgs)
-		{
-			_isOpened = false;
-		}
-		private void OnDialogOpened(object sender, DialogOpenedEventArgs eventArgs)
-		{
-			_dialogSession = eventArgs.Session;
-			// replace with Interface
-			(_dialogViewModel as ProgressViewModel).Session = eventArgs.Session;
 		}
 	}
 }
