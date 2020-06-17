@@ -51,7 +51,7 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 		}
 
 		// Methods
-		private async void ShowDialog(object obj)
+		private async void ShowDialog()
 		{
 			var config = new AlertDialogConfiguration
 			{

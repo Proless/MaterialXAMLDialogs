@@ -29,7 +29,7 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 			ShowDialogCommand = new RelayCommand(x => true, ShowDialog);
 		}
 
-		private async void ShowDialog(object obj)
+		private async void ShowDialog()
 		{
 
 			Items = ItemsText.Split('\n', StringSplitOptions.RemoveEmptyEntries);

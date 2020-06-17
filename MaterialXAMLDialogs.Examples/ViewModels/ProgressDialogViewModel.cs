@@ -45,7 +45,7 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 		}
 
 		// Methods
-		private async void ShowDialog(object obj)
+		private async void ShowDialog()
 		{
 			var config = new ProgressDialogConfiguration
 			{
@@ -91,7 +91,7 @@ namespace MaterialXAMLDialogs.Examples.ViewModels
 
 			await dialogTask;
 		}
-		private async void ShowIndeterminateDialog(object obj)
+		private async void ShowIndeterminateDialog()
 		{
 			var dialog = new IndeterminateDialog();
 
