@@ -15,7 +15,9 @@ namespace MaterialXAMLDialogs.Framework
 		// Constructor
 		internal DialogBase() { }
 
-		// Methods
+		/// <summary>
+		/// Closes the dialog.
+		/// </summary>
 		public virtual void Close()
 		{
 			if (_dialogSession != null && !_dialogSession.IsEnded)

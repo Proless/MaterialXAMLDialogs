@@ -13,18 +13,31 @@ namespace MaterialXAMLDialogs
 		// Fields
 		private IAlertViewModel _dialogViewModel;
 
-		// Properties
+		/// <summary>
+		/// The result of the dialog Show method.
+		/// </summary>
 		public DialogResult Result { get; private set; }
+
+		/// <summary>
+		/// Determines the state of the additional checkBox after the dialog is closed.
+		/// </summary>
 		public bool AdditionalOptionChecked { get; private set; }
 
-		// Constructors
+		/// <summary>
+		/// A dialog to use when an action requires user interaction or just display a warning or information.
+		/// </summary>
+		/// <param name="configuration">Configure the look and properties of the dialog</param>
 		public AlertDialog(AlertDialogConfiguration configuration) : base()
 		{
 			_isOpen = false;
 			InitializeDialog(configuration);
 		}
 
-		// Methods
+		/// <summary>
+		/// Shows the dialog.
+		/// </summary>
+		/// <param name="dialogHosId">The Identifier of the DialogHost instance where the dialog should be shown</param>
+		/// <returns>The result of the dialog chosen by the user</returns>
 		public Task<DialogResult> Show(string dialogHosId)
 		{
 			if (_isOpen)

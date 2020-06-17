@@ -14,18 +14,33 @@ namespace MaterialXAMLDialogs
 		// Fields
 		private ISelectionViewModel<T> _dialogViewModel;
 
-		// Properties
+		/// <summary>
+		/// The selected item value.
+		/// </summary>
 		public T Result { get; private set; }
+
+		/// <summary>
+		/// The items to display for the user to choose from.
+		/// </summary>
 		public IEnumerable<T> Items { get; set; }
 
-		// Constructors
+		/// <summary>
+		/// A dialog to allow the user to choose an item from multiple items.
+		/// </summary>
+		/// <param name="configuration">Configure the look and properties of the dialog</param>
 		public SelectionDialog(SelectionDialogConfiguration configuration)
 		{
 			_isOpen = false;
 			InitializeDialog(configuration);
 		}
 
-		// Methods
+		/// <summary>
+		/// Shows the dialog.
+		/// </summary>
+		/// <param name="dialogHosId">The Identifier of the DialogHost instance where the dialog should be shown</param>
+		/// <param name="items"> The items to display for the user to choose from</param>
+		/// <param name="displayMemberValue">A delegate which will be called for each item to determine the display value of the item</param>
+		/// <returns></returns>
 		public Task<T> Show(string dialogHosId, IEnumerable<T> items, Func<T, string> displayMemberValue)
 		{
 			if (_isOpen)
