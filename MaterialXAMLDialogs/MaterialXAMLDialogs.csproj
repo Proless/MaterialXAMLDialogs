@@ -4,6 +4,7 @@
 		<UseWPF>true</UseWPF>
 		<UserSecretsId>d7ba259c-7bd2-45a8-85df-6ce9cd197918</UserSecretsId>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<Authors>Hasan Darwish</Authors>
 		<Title>MaterialXAMLDialogs</Title>
@@ -12,13 +13,13 @@
 		<Copyright>Copyright (c) 2020 Hasan Darwish</Copyright>
 		<RepositoryUrl>https://github.com/Proless/MaterialXAMLDialogs</RepositoryUrl>
 		<PackageTags>MaterialDesignThemes, Material, ,XAML, UI, WPF, Dialogs, Dialog, MVVM, MessageBox</PackageTags>
-		<PackageReleaseNotes>major refactoring of the code.</PackageReleaseNotes>
+		<PackageReleaseNotes>Added code documentaion.</PackageReleaseNotes>
 		<PackageId>MaterialXAMLDialogs</PackageId>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Version>1.0.3</Version>
-		<AssemblyVersion>1.0.3.0</AssemblyVersion>
+		<Version>1.0.5</Version>
+		<AssemblyVersion>1.0.5.0</AssemblyVersion>
 		<PackageProjectUrl>https://github.com/Proless/MaterialXAMLDialogs</PackageProjectUrl>
-		<FileVersion>1.0.3.0</FileVersion>
+		<FileVersion>1.0.5.0</FileVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="MaterialDesignThemes" Version="3.1.3" />
