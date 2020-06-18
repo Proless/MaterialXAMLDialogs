@@ -1,7 +1,6 @@
 # MaterialXAMLDialogs
- Channel | Status
-:------: | ------
-Build | ![Build](https://github.com/Proless/MaterialXAMLDialogs/workflows/Build/badge.svg)
+![Build](https://github.com/Proless/MaterialXAMLDialogs/workflows/Build/badge.svg)
+[![NuGet](https://img.shields.io/nuget/v/MaterialXAMLDialogs?label=NuGet&style=flat-square)](https://www.nuget.org/packages/MaterialXAMLDialogs/)
 
 
 A small helper Library to use with MaterialDesignInXamlToolkit, it allows displaying some common dialogs and returning a result similar to the old fashioned MessageBox class in WinForms.
