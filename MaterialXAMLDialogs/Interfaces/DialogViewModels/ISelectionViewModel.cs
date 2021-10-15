@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using MaterialXAMLDialogs.Framework;
+﻿using MaterialXAMLDialogs.Framework;
+using System.Collections.Generic;
 
 namespace MaterialXAMLDialogs.Interfaces.DialogViewModels
 {
-	internal interface ISelectionViewModel<T> : IDialogViewModel
-	{
-		IEnumerable<SelectionItem<T>> Items { get; set; }
-	}
+    internal interface ISelectionViewModel<T> : IDialogViewModel
+    {
+        IEnumerable<SelectionItem<T>> Items { get; set; }
+    }
 }

@@ -1,14 +1,14 @@
-﻿using System.Windows.Controls;
-using MaterialXAMLDialogs.Enums;
+﻿using MaterialXAMLDialogs.Enums;
+using System.Windows.Controls;
 
 namespace MaterialXAMLDialogs.Interfaces.DialogViewModels
 {
-	internal interface IAlertViewModel : IDialogViewModel, IDisplaySupportingText, IDisplayIcon
-	{
-		DialogButtons? DialogButtons { get; set; }
-		UserControl Buttons { get; set; }
-		bool ShowAdditionalOption { get; set; }
-		bool IsAdditionalOptionChecked { get; set; }
-		string AdditionalOptionText { get; set; }
-	}
+    internal interface IAlertViewModel : IDialogViewModel, IDisplaySupportingText, IDisplayIcon
+    {
+        DialogButtons? DialogButtons { get; set; }
+        UserControl Buttons { get; set; }
+        bool ShowAdditionalOption { get; set; }
+        bool IsAdditionalOptionChecked { get; set; }
+        string AdditionalOptionText { get; set; }
+    }
 }

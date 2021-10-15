@@ -2,14 +2,14 @@
 
 namespace MaterialXAMLDialogs.Buttons
 {
-	/// <summary>
-	/// Interaction logic for OKCancelButtons.xaml
-	/// </summary>
-	public partial class OKCancelButtons : UserControl
-	{
-		public OKCancelButtons()
-		{
-			InitializeComponent();
-		}
-	}
+    /// <summary>
+    /// Interaction logic for OKCancelButtons.xaml
+    /// </summary>
+    public partial class OKCancelButtons : UserControl
+    {
+        public OKCancelButtons()
+        {
+            InitializeComponent();
+        }
+    }
 }

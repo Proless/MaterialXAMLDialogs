@@ -2,14 +2,14 @@
 
 namespace MaterialXAMLDialogs.Dialogs
 {
-	/// <summary>
-	/// Interaction logic for IndeterminateView.xaml
-	/// </summary>
-	internal partial class IndeterminateView : UserControl
-	{
-		public IndeterminateView()
-		{
-			InitializeComponent();
-		}
-	}
+    /// <summary>
+    /// Interaction logic for IndeterminateView.xaml
+    /// </summary>
+    internal partial class IndeterminateView : UserControl
+    {
+        public IndeterminateView()
+        {
+            InitializeComponent();
+        }
+    }
 }

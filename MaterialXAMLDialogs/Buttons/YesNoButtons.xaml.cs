@@ -2,14 +2,14 @@
 
 namespace MaterialXAMLDialogs.Buttons
 {
-	/// <summary>
-	/// Interaction logic for YesNoButtons.xaml
-	/// </summary>
-	public partial class YesNoButtons : UserControl
-	{
-		public YesNoButtons()
-		{
-			InitializeComponent();
-		}
-	}
+    /// <summary>
+    /// Interaction logic for YesNoButtons.xaml
+    /// </summary>
+    public partial class YesNoButtons : UserControl
+    {
+        public YesNoButtons()
+        {
+            InitializeComponent();
+        }
+    }
 }
